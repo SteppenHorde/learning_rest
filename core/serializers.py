@@ -15,10 +15,10 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 class AuthorSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Author
-        fields = ('first_name', 'last_name', 'birth_date', 'country')
+        fields = ('first_name', 'last_name', 'birth_year', 'country')
 
 
 class BookSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Book
-        fields = ('title', 'author', 'desc', 'pub_date')
+        fields = ('title', 'author', 'desc', 'pub_year')
