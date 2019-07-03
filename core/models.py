@@ -5,7 +5,7 @@ from django.utils import timezone
 class Author(models.Model):
     first_name = models.CharField(verbose_name='Имя', max_length=50)
     last_name = models.CharField(verbose_name='Фамилия', max_length=50)
-    birth_date = models.DateTimeField(verbose_name='Дата рождения')
+    birth_date = models.DateTimeField(verbose_name='Дата рождения', max_value=50)
     country = models.CharField(verbose_name='Страна', max_length=50)
 
     class Meta:
@@ -16,10 +16,10 @@ class Author(models.Model):
 
 
 class Book(models.Model):
-    pub_date = models.DateTimeField(verbose_name='Дата публикации', default=timezone.now)
     title = models.CharField(verbose_name='Название', max_length=255)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
-    desc = models.TextField(verbose_name='Описание')
+    desc = models.TextField(verbose_name='Описание', null=True, blank=True)
+    pub_date = models.DateTimeField(verbose_name='Дата публикации', default=timezone.now)
 
     class Meta:
         ordering = ['title', 'pub_date', 'author']
