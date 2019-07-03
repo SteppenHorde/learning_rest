@@ -5,7 +5,7 @@ from django.utils import timezone
 class Author(models.Model):
     first_name = models.CharField(verbose_name='Имя', max_length=50)
     last_name = models.CharField(verbose_name='Фамилия', max_length=50)
-    birth_date = models.DateTimeField(verbose_name='Дата рождения', max_value=50)
+    birth_year = models.DateTimeField(verbose_name='Дата рождения')
     country = models.CharField(verbose_name='Страна', max_length=50)
 
     class Meta:
