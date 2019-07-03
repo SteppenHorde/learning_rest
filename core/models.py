@@ -13,7 +13,7 @@ YEARS = [
 ]
 
 
-#  для поля с годом достаточно IntegerField
+#  для поля с годом достаточно CharField
 class Author(models.Model):
     first_name = models.CharField(verbose_name='Имя', max_length=50)
     last_name = models.CharField(verbose_name='Фамилия', max_length=50)
